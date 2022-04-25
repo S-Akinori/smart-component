@@ -11,7 +11,7 @@ interface Props {
   components: ComponentDoc[]
 }
 
-const ComponentPage: NextPage = ({components}: Props) => {
+const ComponentPage = ({components}: Props) => {
   return (
     <Layout>
       <Container>
