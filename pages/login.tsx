@@ -69,12 +69,12 @@ const LoginPage : NextPage = () => {
             <div className="text-center mb-4 px-4 w-1/2 md:w-1/4">
               <Button onClick={() => signInWithSNS('google')} className="w-full block" style={{background: '#FFF', color: "#222", boxShadow: '2px 2px 2px #ccc'}}><GoogleIcon />Google</Button>
             </div>
-            <div className="text-center mb-4 px-4 w-1/2 md:w-1/4">
+            {/* <div className="text-center mb-4 px-4 w-1/2 md:w-1/4">
               <Button onClick={() => signInWithSNS('twitter')} className="w-full block" style={{background: '#1DA1F2'}}><TwitterIcon /> Twitter</Button>
             </div>
             <div className="text-center mb-4 px-4 w-1/2 md:w-1/4">
               <Button onClick={() => signInWithSNS('facebook')} className="w-full block" style={{background: '#1877F2'}}><FacebookIcon /> Facebook</Button>
-            </div>
+            </div> */}
             <div className="text-center mb-4 px-4 w-1/2 md:w-1/4">
               <Button onClick={() => signInWithSNS('github')} className="w-full block" style={{background: '#24292f'}}><GitHubIcon /> GitHub</Button>
             </div>
