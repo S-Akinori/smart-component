@@ -11,7 +11,8 @@ interface Props {
   components: ComponentDoc[]
 }
 
-const ComponentPage = ({components}: Props) => {
+const ComponentPage = () => {
+  const components: ComponentDoc[] = []
   return (
     <Layout>
       <Container>
@@ -49,20 +50,20 @@ const ComponentPage = ({components}: Props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const componentsRef = db.collection('components') ;
-  const componentsDocs = await componentsRef.where('status', 'in', ['public', 'readOnly']).limit(20).get();
-  let components : ComponentDoc[] = []
-  componentsDocs.forEach(doc => {
-    const componentDoc = doc.data() as ComponentDoc
-    componentDoc.id = doc.id
-    components.push(componentDoc)
-  })
-  return {
-    props: {
-      components
-    }
-  }
-}
+// export const getStaticProps: GetStaticProps = async () => {
+//   const componentsRef = db.collection('components') ;
+//   const componentsDocs = await componentsRef.where('status', 'in', ['public', 'readOnly']).limit(20).get();
+//   let components : ComponentDoc[] = []
+//   componentsDocs.forEach(doc => {
+//     const componentDoc = doc.data() as ComponentDoc
+//     componentDoc.id = doc.id
+//     components.push(componentDoc)
+//   })
+//   return {
+//     props: {
+//       components
+//     }
+//   }
+// }
 
 export default ComponentPage
