@@ -155,7 +155,7 @@ const ComponentCreatePage: NextPage = () => {
         )}
         <div className='px-4 flex'>
           {component && <TextField id='componentName' label="コンポーネント名" variant="standard" className='w-1/2' defaultValue={component.name} disabled={component?.status === 'readOnly'} />}
-          <div className='mt-4'>{errors.name && <Error>{errors.name}</Error>}</div>
+          <div className='mt-4'>{errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}</div>
           <FormControl className='ml-4'>
             <InputLabel id="component-status-label">公開設定</InputLabel>
             <Select
