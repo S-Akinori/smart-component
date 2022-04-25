@@ -15,10 +15,17 @@ const firebaseConfig = {
 
 const app = !getApps.length ? initializeApp(firebaseConfig) : getApp();
 
-export const auth = getAuth();
+const auth = getAuth();
+const db = getFirestore()
+const storage = getStorage();
 
-export const db = getFirestore()
+if(process.env.NEXT_PUBLIC_ENV !== 'production') {
+  console.log('firebase emulators start')
+  connectAuthEmulator(auth, "http://localhost:9099");
+  connectFirestoreEmulator(db, 'localhost', 8080);
+  connectStorageEmulator(storage, "localhost", 9199);
+}
 
-export const storage = getStorage();
+export {auth, db, storage};
 
 export default app;

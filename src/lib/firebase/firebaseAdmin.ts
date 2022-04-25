@@ -13,3 +13,5 @@ export const firebaseAdmin = admin.apps[0] || admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
 });
+
+export const db = firebaseAdmin.firestore();
