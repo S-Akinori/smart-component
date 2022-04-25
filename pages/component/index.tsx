@@ -11,8 +11,7 @@ interface Props {
   components: ComponentDoc[]
 }
 
-const ComponentPage = () => {
-  const components: ComponentDoc[] = []
+const ComponentPage = ({components}: Props) => {
   return (
     <Layout>
       <Container>
